@@ -1,0 +1,50 @@
+/* Solution 1 - Using grid-template-columns and grid-column */
+
+.testimonial-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@media (min-width: 33em) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }
+
+  .testimonial:last-child {
+    grid-column: span 2;
+    grid-row: 3 / span 2;
+  }
+}
+
+@media (min-width: 38em) {
+  .testimonial:last-child {
+    grid-column-start: 2;
+    grid-row: 2 / span 2;
+  }
+}
+
+@media (min-width: 54em) {
+  .testimonial-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .testimonial:last-child {
+    grid-column: 1 / span 3;
+  }
+}
+
+@media (min-width: 75em) {
+  .testimonial-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .testimonial:last-child {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+}
+
